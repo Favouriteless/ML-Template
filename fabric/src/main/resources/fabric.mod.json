@@ -15,7 +15,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.example.examplemod.ExampleNodFabric"
+            "com.example.examplemod.ExampleModFabric"
         ],
         "client": [
             "com.example.examplemod.client.ExampleModFabricClient"
@@ -27,7 +27,7 @@
     ],
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",
-        "fabricapi": ">=${fabric_api_version}",
+        "fabric-api": ">=${fabric_api_version}",
         "fabric": "*",
         "minecraft": "${minecraft_version}",
         "java": ">=17"
