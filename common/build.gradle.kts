@@ -1,10 +1,11 @@
 plugins {
-    id("examplemod-convention")
+    id("multiloader-convention")
+
     alias(libs.plugins.vanillagradle)
 }
 
 val mod_id: String by project
-version = libs.versions.examplemod.get()
+version = libs.versions.modversion.get()
 val minecraft_version = libs.versions.minecraft.asProvider().get()
 
 base {

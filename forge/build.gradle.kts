@@ -1,7 +1,7 @@
 import net.minecraftforge.gradle.userdev.tasks.JarJar
 
 plugins {
-    id("examplemod-convention")
+    id("multiloader-convention")
 
     alias(libs.plugins.minotaur)
     alias(libs.plugins.curseforgegradle)
@@ -11,7 +11,7 @@ plugins {
 }
 
 val mod_id: String by project
-version = libs.versions.examplemod.get()
+version = libs.versions.modversion.get()
 val minecraft_version = libs.versions.minecraft.asProvider().get()
 val mappings_minecraft_version = libs.versions.parchment.minecraft.get()
 val parchment_version = libs.versions.parchment.asProvider().get()

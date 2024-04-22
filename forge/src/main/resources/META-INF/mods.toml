@@ -9,7 +9,6 @@ license = "${license}"
     displayName = "${mod_name}"
     displayURL= "${display_url}"
     logoFile = "${mod_id}.png"
-    credits = "${credits}"
     authors = "${author}"
     description = '''${description}'''
 

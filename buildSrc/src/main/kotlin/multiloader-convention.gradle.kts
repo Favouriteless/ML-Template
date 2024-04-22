@@ -17,11 +17,10 @@ val libs = project.versionCatalogs.find("libs")
 val mod_id: String by project
 val mod_name: String by project
 val author: String by project
-val credits: String by project
 val license: String by project
 val mod_description: String by project
 val display_url: String by project
-val version = libs.get().findVersion("examplemod").get()
+val version = libs.get().findVersion("modversion").get()
 val minecraft_version = libs.get().findVersion("minecraft").get()
 val forge_version = libs.get().findVersion("forge").get()
 val forge_version_range = libs.get().findVersion("forge.range").get()
@@ -69,7 +68,6 @@ tasks.withType<ProcessResources>().configureEach {
             "author" to author,
             "mod_id" to mod_id,
             "license" to license,
-            "credits" to credits,
             "description" to mod_description
     )
 
