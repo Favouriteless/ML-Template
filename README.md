@@ -28,7 +28,7 @@ Loader specific projects such as the Forge and Fabric project are used to load t
 
 ## Adding Dependencies
 
-Unlike other Minecraft Modding MDKs or Templates, this one utilises a version catalogue. To properly add a dependency or change the version of your mod, it must be added to `gradle/libs.versions.toml`. If your dependency is another mod, you should also add it to each platform's mod file and create a property for it in `multiloader-convention.gradle.kts` so it can be expanded.
+Unlike other Minecraft Modding MDKs or Templates, this one utilises a version catalogue. To properly add a dependency or change the version of your mod, it must be added to `gradle/libs.versions.toml` in addition to your build scripts. If your dependency is another mod, you should also add it to each platform's mod file and create a property for it in `multiloader-convention.gradle.kts` so it can be expanded.
 
 ## Removing Platforms and Loaders
 While the MultiLoader Template includes support for many platforms and loaders you can easily remove support for the ones you don't need. This can be done by deleting the subproject folder and then removing it from the `settings.gradle` file. For example if you wanted to remove support for Forge you would follow the following steps. 
