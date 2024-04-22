@@ -4,7 +4,7 @@ This project provides a Kotlin-DSL Gradle project template with a version catalo
 
 ## Credits
 
-Credits for this template go to [MultiLoader Template](https://github.com/jaredlll08/MultiLoader-Template/tree/1.20.4), this template is a modified version of theirs to allow for Kotlin-DSL and version catalogues. Even this README is very similar to theirs.
+Credits for this template go to Tslat/Witixin's [Geckolib](https://github.com/bernie-g/geckolib) setup and Jared [MultiLoader Template](https://github.com/jaredlll08/MultiLoader-Template/tree/1.20.4), this template is a modified version of theirs to allow for Kotlin-DSL and version catalogues. Even this README is very similar to theirs.
 
 ## Getting Started
 
