@@ -6,26 +6,32 @@ plugins {
 }
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(17)
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
 
     withSourcesJar()
     withJavadocJar()
+}
+
+idea {
+    module {
+        isDownloadSources = true
+        isDownloadJavadoc = true
+    }
 }
 
 val libs = project.versionCatalogs.find("libs")
 
 val mod_id: String by project
 val mod_name: String by project
+val version = libs.get().findVersion("modversion").get()
 val author: String by project
 val license: String by project
 val mod_description: String by project
 val display_url: String by project
-val version = libs.get().findVersion("modversion").get()
 val minecraft_version = libs.get().findVersion("minecraft").get()
-val forge_version = libs.get().findVersion("forge").get()
-val forge_version_range = libs.get().findVersion("forge.range").get()
-val fml_version_range = libs.get().findVersion("forge.fml.range").get()
 val minecraft_version_range = libs.get().findVersion("minecraft.range").get()
+val neoforge_version = libs.get().findVersion("neoforge").get()
+val neoforge_version_range = libs.get().findVersion("neoforge.range").get()
 val fapi_version = libs.get().findVersion("fabric.api").get()
 val fabric_version = libs.get().findVersion("fabric").get()
 
@@ -49,7 +55,7 @@ tasks.withType<Jar>().configureEach {
 
 tasks.withType<JavaCompile>().configureEach {
     this.options.encoding = "UTF-8"
-    this.options.getRelease().set(17)
+    this.options.getRelease().set(21)
 }
 
 tasks.withType<ProcessResources>().configureEach {
@@ -58,9 +64,8 @@ tasks.withType<ProcessResources>().configureEach {
             "group" to project.group, // Else we target the task's group.
             "display_url" to display_url, // Else we target the task's group.
             "minecraft_version" to minecraft_version,
-            "forge_version" to forge_version,
-            "fml_version_range" to fml_version_range,
-            "forge_version_range" to forge_version_range,
+            "neoforge_version" to neoforge_version,
+            "neoforge_version_range" to neoforge_version_range,
             "minecraft_version_range" to minecraft_version_range,
             "fabric_api_version" to fapi_version,
             "fabric_loader_version" to fabric_version,
@@ -71,7 +76,7 @@ tasks.withType<ProcessResources>().configureEach {
             "description" to mod_description
     )
 
-    filesMatching(listOf("pack.mcmeta", "fabric.mod.json", "META-INF/mods.toml", "*.mixins.json")) {
+    filesMatching(listOf("pack.mcmeta", "fabric.mod.json", "META-INF/neoforge.mods.toml", "*.mixins.json")) {
         expand(expandProps)
     }
 

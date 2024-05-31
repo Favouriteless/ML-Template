@@ -2,7 +2,16 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         maven {
-            name = "Forge"
+            name = "NeoForge"
+            url = uri("https://maven.neoforged.net/")
+            content {
+                includeGroupAndSubgroups("net.neoforged")
+                includeGroup("net.covers1624")
+                includeGroup("codechicken")
+            }
+        }
+        maven {
+            name = "Forge" // Forge not in the template but VanillaGradle needs the repo.
             url = uri("https://maven.minecraftforge.net/")
             content {
                 includeGroupAndSubgroups("net.minecraftforge")
@@ -41,4 +50,4 @@ rootProject.name = "ML-Template"
 
 include("common")
 include("fabric")
-include("forge")
+include("neoforge")

@@ -1,8 +1,6 @@
 plugins {
     id("multiloader-convention")
 
-    alias(libs.plugins.minotaur)
-    alias(libs.plugins.curseforgegradle)
     alias(libs.plugins.loom)
 }
 
@@ -15,8 +13,8 @@ val fabric_version = libs.versions.fabric.asProvider().get()
 val fapi_version = libs.versions.fabric.api.get()
 
 java {
-    sourceCompatibility =  JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility =  JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 base {
@@ -25,7 +23,7 @@ base {
 
 repositories {
     maven {
-        name = "ParchmentMC"
+        name = "Parchment"
         url = uri("https://maven.parchmentmc.org")
         content {
             includeGroupAndSubgroups("org.parchmentmc")

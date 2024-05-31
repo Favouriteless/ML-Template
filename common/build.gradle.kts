@@ -19,17 +19,13 @@ minecraft {
 
 dependencies {
     implementation( libs.jsr305 )
-    compileOnly( libs.mixin )
-    compileOnly( libs.mixinextras.common )
 }
 
 publishing {
-    publishing {
-        publications {
-            create<MavenPublication>(mod_id) {
-                from(components["java"])
-                artifactId = base.archivesName.get()
-            }
+    publications {
+        create<MavenPublication>(mod_id) {
+            from(components["java"])
+            artifactId = base.archivesName.get()
         }
     }
 }
