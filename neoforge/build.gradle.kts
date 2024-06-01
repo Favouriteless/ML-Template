@@ -1,6 +1,8 @@
 plugins {
     id("multiloader-convention")
 
+    alias(libs.plugins.minotaur)
+    alias(libs.plugins.curseforgegradle)
     alias(libs.plugins.neogradle)
 }
 
@@ -28,7 +30,6 @@ minecraft {
 runs {
     configureEach {
         systemProperty("forge.logging.console.level", "debug")
-        systemProperty("forge.enabledGameTestNamespaces", mod_id)
 
         modSource(project.sourceSets.getByName("main"))
         modSource(project(":common").sourceSets.getByName("main"))
@@ -49,7 +50,7 @@ runs {
         workingDirectory(project.file("runs/$name"))
         programArguments.addAll("--mod", mod_id, "--all",
             "--output", project(":common").file("src/generated/resources/").absolutePath,
-            "--existing", project(":common").file("src/main/resources").absolutePath
+            "--existing", project(":common").file("src/main/resources/").absolutePath
         )
     }
 

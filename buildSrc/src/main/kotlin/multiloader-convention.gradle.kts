@@ -28,10 +28,13 @@ val author: String by project
 val license: String by project
 val mod_description: String by project
 val display_url: String by project
+
 val minecraft_version = libs.get().findVersion("minecraft").get()
 val minecraft_version_range = libs.get().findVersion("minecraft.range").get()
+
 val neoforge_version = libs.get().findVersion("neoforge").get()
 val neoforge_version_range = libs.get().findVersion("neoforge.range").get()
+
 val fapi_version = libs.get().findVersion("fabric.api").get()
 val fabric_version = libs.get().findVersion("fabric").get()
 
@@ -42,13 +45,13 @@ tasks.withType<Jar>().configureEach {
 
     manifest {
         attributes(mapOf(
-                "Specification-Title"     to mod_name,
-                "Specification-Vendor"    to author,
-                "Specification-Version"   to version,
-                "Implementation-Title"    to mod_name,
-                "Implementation-Version"  to version,
-                "Implementation-Vendor"   to author,
-                "Built-On-Minecraft"      to minecraft_version
+            "Specification-Title"     to mod_name,
+            "Specification-Vendor"    to author,
+            "Specification-Version"   to version,
+            "Implementation-Title"    to mod_name,
+            "Implementation-Version"  to version,
+            "Implementation-Vendor"   to author,
+            "Built-On-Minecraft"      to minecraft_version
         ))
     }
 }

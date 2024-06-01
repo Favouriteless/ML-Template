@@ -12,11 +12,13 @@
     fabric-api = "0.99.4+1.20.6"
 
 # NeoForge Settings
+    neoforge-loader-range = "[2,)"
     neoforge-range = "[20.6,)"
     neoforge = "20.6.99-beta"
 
 # Dependencies
-    mixin = "0.8.5"
+    mixin = "0.8.6"
+    mixinextras = "0.3.5"
     jsr305 = "3.0.1"
 
 # Plugins
@@ -24,13 +26,14 @@
     plugin-curseforge-gradle = "1.1.18"
     plugin-idea-ext = "1.1.8"
     plugin-vanilla-gradle = "0.2.1-SNAPSHOT"
-    plugin-neo-gradle = "7.0.133"
+    plugin-neo-gradle = "7.0.134"
     plugin-loom = "1.6-SNAPSHOT"
     plugin-mixin = "0.7.+"
 
 [libraries]
 # Mixin
     mixin = { group = "org.spongepowered", name = "mixin", version.ref = "mixin" }
+    mixinextras-common = { group = "io.github.llamalad7", name = "mixinextras-common", version.ref = "mixinextras" }
 
 # Platform
     neoforge = { group = "net.neoforged", name = "neoforge", version.ref = "neoforge" }

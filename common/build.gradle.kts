@@ -19,6 +19,7 @@ minecraft {
 
 dependencies {
     implementation( libs.jsr305 )
+    compileOnly(libs.mixinextras.common)
 }
 
 publishing {
